@@ -1,10 +1,14 @@
 {
-  "name": "@lite/validator",
-  "version": "0.0.2",
+  "name": "@mrhitman/validator",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "prepublish": "yarn build",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "license": "ISC",
   "description": "Tiny validation package-wrapper for superstruct package for 'decorator' style usage",
   "keywords": [
@@ -13,6 +17,10 @@
     "superstruct",
     "nestjs"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+github.com:mrhitman/-lite-validator.git"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
