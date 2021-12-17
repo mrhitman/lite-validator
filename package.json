@@ -1,0 +1,32 @@
+{
+  "name": "@lite/validator",
+  "version": "0.0.2",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "prepublish": "yarn build",
+  "license": "ISC",
+  "description": "Tiny validation package-wrapper for superstruct package for 'decorator' style usage",
+  "keywords": [
+    "validation",
+    "decorator",
+    "superstruct",
+    "nestjs"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:dev": "nodemon src/index.ts"
+  },
+  "dependencies": {
+    "superstruct": "^0.15.3"
+  },
+  "devDependencies": {
+    "jest": "^27.4.5",
+    "nodemon": "^2.0.15",
+    "reflect-metadata": "^0.1.13",
+    "ts-jest": "^27.1.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}
