@@ -54,6 +54,7 @@ export class ExampleController {
     // Your controller logic here
   }
 }
+```
 
 [github](https://github.com/mrhitman/lite-validator)
 [example](https://github.com/mrhitman/lite-validator/blob/main/src/example.ts)
