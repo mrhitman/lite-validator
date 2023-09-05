@@ -9,7 +9,7 @@ class Test {
   @bind(size(string(), 4, 20)) // should be only one decorator that combine 
   foo: string;
 
-  @bar(number()) // should be only one decorator that combine 
+  @bind(number()) // should be only one decorator that combine 
   foo: number;
 }
 
