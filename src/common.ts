@@ -6,16 +6,16 @@ export const validationMeta = Symbol("validation:schema");
 
 export const bindMeta = <T>(
   meta: Symbol,
-  target: Object,
+  target: any,
   value: T,
   key: string
-) => {
+): void => {
   const data = Reflect.getMetadata(meta, target) || {};
   Reflect.defineMetadata(meta, {...data, [key]: value}, target);
 };
 
 export const bind =
-  (checker: Struct<any, any>) => (target: Object, key: string) =>
+  <T>(checker: Struct<T, unknown>) => (target: any, key: any) =>
     bindMeta(validationMeta, target, checker, key);
 
 export const validate = (target: Object) => {

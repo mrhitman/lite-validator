@@ -33,5 +33,27 @@ console.log(validate(test));
 ]
 ```
 
+### with nestjs > 10 version
+
+```js
+import { bind, validate, string, number, size, ValidationPipe } from '@mrhitman/validator';
+
+class Test {
+  @bind(size(string(), 4, 20)) // should be only one decorator that combine 
+  foo: string;
+
+  @bind(number()) // should be only one decorator that combine 
+  foo: number;
+}
+
+@Controller('example')
+export class ExampleController {
+  @Post()
+  @UsePipes(new ValidationPipe())
+  create(@Body() dto: Test) {
+    // Your controller logic here
+  }
+}
+
 [github](https://github.com/mrhitman/lite-validator)
 [example](https://github.com/mrhitman/lite-validator/blob/main/src/example.ts)
