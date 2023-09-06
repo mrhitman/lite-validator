@@ -11,14 +11,13 @@ export class ValidationPipe implements PipeTransform<any> {
       return value;
     }
 
-    const object = plainToClass(metatype, value);
-    const [error, _] = validate(object);
-
+    const [error, _] = validate(value);
     if (error) {
       throw new BadRequestException(error.message);
     }
 
-    return value;
+    const object = plainToClass(value, metatype);
+    return object;
   }
 
   private toValidate(metatype: any): boolean {
